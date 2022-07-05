@@ -11,6 +11,7 @@ from ..policies.volume_physics_policy import VolumePhysicsPolicy
 @dataclasses.dataclass(frozen=False)
 class ShelveSection:
     """棚の一段の中のある区画"""
+    id: int # 追加
     volume: Volume
     step: 'ShelveStep'
     category: ChildCategory
@@ -50,6 +51,7 @@ class ShelveSection:
 @dataclasses.dataclass(frozen=False)
 class ShelveStep:
     """棚の一段"""
+    id: int # 追加
     sections: list[ShelveSection]
     shelve: 'Shelve'
 
@@ -63,5 +65,6 @@ class ShelveStep:
 
 @dataclasses.dataclass(frozen=False)
 class Shelve:
+    id: int # 追加
     steps: list[ShelveStep]
     category: ParentCategory
